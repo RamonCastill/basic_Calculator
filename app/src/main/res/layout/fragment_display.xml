@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/tvDisplayOperation"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/display_number_size_max"
             android:gravity="end"
@@ -23,7 +23,8 @@
             android:text="@string/button_numbers_0"
             android:layout_marginHorizontal="@dimen/common_padding_min"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/show_operation"/>
 
         <TextView
             android:id="@+id/tvDisplayResult"
@@ -32,9 +33,22 @@
             android:textSize="@dimen/display_number_size_middle"
             android:gravity="end"
             android:text="@string/button_numbers_0"
+            android:inputType="numberSigned"
             android:layout_marginHorizontal="@dimen/common_padding_min"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tvDisplayOperation"/>
+
+        <TextView
+            android:id="@+id/show_operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:gravity="start"
+            android:layout_marginStart="@dimen/common_padding_default"
+            tools:text="+"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvDisplayOperation"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -44,33 +58,14 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnParenthesis1"
-            android:layout_width="@dimen/button_height"
+            android:id="@+id/btnC"
+            android:layout_width="200dp"
             android:layout_height="@dimen/button_height"
             android:layout_marginStart="@dimen/button_margin"
             android:gravity="center_vertical"
-            android:text="@string/button_numbers_parenthesis1"
+            android:text="@string/button_numbers_C"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_number_size"
-            tools:ignore="RtlCompat"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/white"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnParenthesis2"
-            android:layout_width="@dimen/button_height"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginStart="@dimen/button_margin"
-            android:gravity="center_vertical"
-            android:text="@string/button_numbers_parenthesis2"
-            android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:textSize="@dimen/button_number_size"
             tools:ignore="RtlCompat"
             app:layout_constraintStart_toStartOf="parent"
@@ -414,27 +409,8 @@
             android:background="@color/white"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnC"
-            android:layout_width="@dimen/button_height"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginStart="@dimen/button_margin"
-            android:gravity="center_vertical"
-            android:text="@string/button_numbers_C"
-            android:textAlignment="center"
-            android:textColor="@color/red"
-            android:textSize="@dimen/button_number_size"
-            tools:ignore="RtlCompat"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/white"/>
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEqual"
-            android:layout_width="@dimen/button_height"
+            android:layout_width="200dp"
             android:layout_height="@dimen/button_height"
             android:layout_marginStart="@dimen/button_margin"
             android:gravity="center_vertical"

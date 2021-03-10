@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="display_height">230dp</dimen>
+    <dimen name="display_height">215dp</dimen>
     <dimen name="button_height">100dp</dimen>
     <dimen name="button_margin">2dp</dimen>
     <dimen name="display_main_number_height">100dp</dimen>

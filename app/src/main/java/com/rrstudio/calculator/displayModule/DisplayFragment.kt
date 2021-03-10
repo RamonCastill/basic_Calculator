@@ -12,6 +12,7 @@ import org.jetbrains.anko.uiThread
 class DisplayFragment : Fragment(R.layout.fragment_display) {
 
     private lateinit var mBinding: FragmentDisplayBinding
+    private val mInteractor: DisplayOperations? = null
 
     private var num1: Float = 0.0F
     private var num2: Float = 0.0F
@@ -36,19 +37,17 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
             btnSum.setOnClickListener { setView("+") }
             btnC.setOnClickListener { setView("c") }
             btnRest.setOnClickListener { setView("-") }
-            btnParenthesis1.setOnClickListener { setView("(")}
-            btnParenthesis2.setOnClickListener { setView(")")}
             btnPercent.setOnClickListener { setView("%") }
             btnDivide.setOnClickListener { setView("÷") }
             btnMultiplication.setOnClickListener { setView("x") }
-            btnDot.setOnClickListener { setView(".") }
+            btnDot.setOnClickListener { setNumber(".") }
             btnEqual.setOnClickListener { setView("=") }
         }
 
     }
 
     @SuppressLint("SetTextI18n")
-    fun setNumber(butt: Int){
+    fun setNumber(butt: Any){
         if (mBinding.tvDisplayOperation.text == "0") {
             mBinding.tvDisplayOperation.text = ""
         }
@@ -63,10 +62,12 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
             num2 = (mBinding.tvDisplayOperation.text.toString()).toFloat()
         }else{
             num1 = (mBinding.tvDisplayOperation.text.toString()).toFloat()
-            mBinding.tvDisplayResult.text = num1.toString()
+            if((num1.toInt()).toFloat() == num1 ){mBinding.tvDisplayResult.text = num1.toInt().toString()}
+            else {mBinding.tvDisplayResult.text = num1.toString()}
             operation = ""
         }
         mBinding.tvDisplayOperation.text = "0"
+        if (butt != "c")mBinding.showOperation.text = butt else mBinding.showOperation.text = ""
 
         when(butt) {
             "c" -> {
@@ -80,9 +81,6 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
             "%"-> { operation = "percentage" }
             "÷"-> { operation = "division" }
             "x"-> { operation = "multiplication"}
-            "."-> { mBinding.tvDisplayOperation.text = mBinding.tvDisplayOperation.text.toString() + "."}
-            "("-> { mBinding.tvDisplayOperation.text = mBinding.tvDisplayOperation.text.toString() + "("}
-            ")"-> { mBinding.tvDisplayOperation.text = mBinding.tvDisplayOperation.text.toString() + ")"}
             "="-> {
                 when (operation) {
                     "sum" -> {
@@ -91,7 +89,10 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                             num1 = c
                             num2 = 0.0F
                             uiThread {
-                                mBinding.tvDisplayResult.text = c.toString()
+                                if((c.toInt()).toFloat() == c ){mBinding.tvDisplayResult.text = c.toInt().toString()}
+                                else {mBinding.tvDisplayResult.text = c.toString()}
+                                //mBinding.tvDisplayResult.text = c.toString()
+                                operation = ""
                             }
                         }
                     }
@@ -102,7 +103,10 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                             num1 = c
                             num2 = 0.0F
                             uiThread {
-                                mBinding.tvDisplayResult.text = c.toString()
+                                if((c.toInt()).toFloat() == c ){mBinding.tvDisplayResult.text = c.toInt().toString()}
+                                else {mBinding.tvDisplayResult.text = c.toString()}
+                                //mBinding.tvDisplayResult.text = c.toString()
+                                operation = ""
                             }
                         }
                     }
@@ -112,7 +116,10 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                             num1 = c
                             num2 = 0.0F
                             uiThread {
-                                mBinding.tvDisplayResult.text = c.toString()
+                                if((c.toInt()).toFloat() == c ){mBinding.tvDisplayResult.text = c.toInt().toString()}
+                                else {mBinding.tvDisplayResult.text = c.toString()}
+                                //mBinding.tvDisplayResult.text = c.toString()
+                                operation = ""
                             }
                         }
                     }
@@ -122,7 +129,10 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                             num1 = c
                             num2 = 0.0F
                             uiThread {
-                                mBinding.tvDisplayResult.text = c.toString()
+                                if((c.toInt()).toFloat() == c ){mBinding.tvDisplayResult.text = c.toInt().toString()}
+                                else {mBinding.tvDisplayResult.text = c.toString()}
+                                //mBinding.tvDisplayResult.text = c.toString()
+                                operation = ""
                             }
                         }
                     }
@@ -131,13 +141,10 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                         num1 = c
                         num2 = 0.0F
                         uiThread {
-                            mBinding.tvDisplayResult.text = c.toString()
-                        }
-                    }}
-                    "dot" -> {doAsync {
-
-                        uiThread {
-
+                            if((c.toInt()).toFloat() == c ){mBinding.tvDisplayResult.text = c.toInt().toString()}
+                            else {mBinding.tvDisplayResult.text = c.toString()}
+                            //mBinding.tvDisplayResult.text = c.toString()
+                            operation = ""
                         }
                     }}
                 }
