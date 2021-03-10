@@ -112,7 +112,7 @@ class DisplayFragment : Fragment(R.layout.fragment_display) {
                     }
                     "percentage" -> {
                         doAsync {
-                            val c: Float = 100*(num1 / num2)
+                            val c: Float = num2*(num1 / 100)
                             num1 = c
                             num2 = 0.0F
                             uiThread {
