@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="button_numbers_C">C</string>
+    <string name="button_numbers_parenthesis2">)</string>
+    <string name="button_numbers_percentage">%</string>
+    <string name="button_numbers_divide">÷</string>
+    <string name="button_numbers_7">7</string>
+    <string name="button_numbers_8">8</string>
+    <string name="button_numbers_9">9</string>
+    <string name="button_numbers_multiplication">x</string>
+    <string name="button_numbers_4">4</string>
+    <string name="button_numbers_5">5</string>
+    <string name="button_numbers_6">6</string>
+    <string name="button_numbers_rest">-</string>
+    <string name="button_numbers_1">1</string>
+    <string name="button_numbers_2">2</string>
+    <string name="button_numbers_3">3</string>
+    <string name="button_numbers_sum">+</string>
+    <string name="button_numbers_change_sign">+/-</string>
+    <string name="button_numbers_0">0</string>
+    <string name="button_numbers_dot">.</string>
+    <string name="button_numbers_equal">=</string>
+    <string name="button_numbers_parenthesis1">(</string>
+</resources>

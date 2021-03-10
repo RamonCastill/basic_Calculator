@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="display_height">230dp</dimen>
+    <dimen name="button_height">100dp</dimen>
+    <dimen name="button_margin">2dp</dimen>
+    <dimen name="display_main_number_height">100dp</dimen>
+    <dimen name="button_number_size">60sp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="display_number_size_max">60sp</dimen>
+    <dimen name="display_number_size_middle">50sp</dimen>
+</resources>
